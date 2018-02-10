@@ -33,7 +33,7 @@ int initPort(udp_if_t *if_ptr, int port)
 	return 0;
 }
 
-int initLPAddr(struct sockaddr_in *addr, int port)
+int initLBAddr(struct sockaddr_in *addr, int port)
 {
 	// Initialize Empty Socket Address
 	memset((char *)addr, 0, sizeof(struct sockaddr_in));
