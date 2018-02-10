@@ -14,7 +14,8 @@ int main(int argc, char **argv)
 	// Init Networking Variables
 	if(initPort(&if_me, ACT_PORT))
 		return 1;
-	initLBAddr(&addr_dut, DUT_PORT);
+	if(initLBAddr(&addr_dut, DUT_PORT))
+		return 1;
 
 	while(1) {
 		// Wait For Packet From Supervisor With Instructions
@@ -22,6 +23,7 @@ int main(int argc, char **argv)
 			return 1;
 
 		/* Actuator Model */
+		printf("Actuation Applied\n");
 
 		// Apply Actuation To DUT
 		to_dut.act_to_dut = act_to_dut;

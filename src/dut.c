@@ -13,7 +13,8 @@ int main(int argc, char **argv)
 	// Init Networking Variables
 	if(initPort(&if_me, DUT_PORT))
 		return 1;
-	initLBAddr(&addr_sens, SENS_PORT);
+	if(initLBAddr(&addr_sens, SENS_PORT))
+		return 1;
 
 	while(1) {
 		// Wait On Actuation From Actuator
@@ -22,11 +23,13 @@ int main(int argc, char **argv)
 
 		// If Packet Was A Sensor Poll
 		if(input.poll.hash == POLL_HASH) {
+			printf("Received Poll\n");
 			if(udpSend(&if_me, (void *)&to_sens, sizeof(to_sens), &addr_sens))
 				return 1;
 		}
 		else {
 			/* Manipulate State Based On Actuation */
+			printf("Adjusted To Actuation\n");
 		}
 	}
 
