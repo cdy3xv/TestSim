@@ -24,7 +24,6 @@ int main(int argc, char **argv)
 	
 	// Payloads
 	sup_to_act_t from_sup;
-	act_to_dut_t act_to_dut;
 	dut_input_t to_dut;
 
 	// Init Networking Variables
@@ -39,10 +38,14 @@ int main(int argc, char **argv)
 			return 1;
 
 		/* Actuator Model */
+		if(actModel(&from_sup, &(to_dut.act_to_dut)))
+			return 1;
+
+#ifdef DEBUG_COMMS
 		printf("Actuation Applied\n");
+#endif
 
 		// Apply Actuation To DUT
-		to_dut.act_to_dut = act_to_dut;
 		if(udpSend(&if_me, (void *)&to_dut, sizeof(to_dut), &addr_dut))
 			return 1;
 	}

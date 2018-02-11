@@ -24,6 +24,9 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
+// Comment Out For Silent Operation
+#define DEBUG_COMMS
+
 // Port Numbers For The Simulation Components
 #define SUP_PORT	5428
 #define SENS_PORT	5429
@@ -47,7 +50,7 @@ typedef struct _sens_to_sup_t {
 
 // Supervisor To Actuator Payload Typedef
 typedef struct _sup_to_act_t {
-	double voltage_cmd;		// V
+	double current_cmd;		// A
 } sup_to_act_t;
 
 // Actuator To DUT Payload Typedef

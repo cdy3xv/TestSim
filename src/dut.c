@@ -48,7 +48,9 @@ int main(int argc, char **argv)
 			if(dutModel(&(input.act_to_dut), &to_sens))
 				return 1;
 
+#ifdef DEBUG_COMMS
 			printf("Adjusted To Actuation\n");
+#endif
 		}
 	}
 

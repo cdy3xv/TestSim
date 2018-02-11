@@ -16,7 +16,7 @@ SUP_OBJ=$(patsubst %,$(ODIR)/%,$(_SUP_OBJ))
 _SENS_OBJ= sensor.o testsim.o
 SENS_OBJ=$(patsubst %,$(ODIR)/%,$(_SENS_OBJ))
 
-_ACT_OBJ= actuator.o testsim.o
+_ACT_OBJ= actuator.o testsim.o sampleHPU.o
 ACT_OBJ=$(patsubst %,$(ODIR)/%,$(_ACT_OBJ))
 
 _DUT_OBJ= dut.o testsim.o steel_1x1_compress.o

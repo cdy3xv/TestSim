@@ -19,5 +19,7 @@
 
 #include "testsim.h"
 
+int actModel(sup_to_act_t *in_ptr, act_to_dut_t *out_ptr);
+
 #endif /* TESTSIM_ACTUATOR_H */
 
