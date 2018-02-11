@@ -1,3 +1,19 @@
+/**
+ * TestSim
+ * Component: testsim.c
+ * Author: Connor Young
+ *
+ * (C) 2018 by Connor Young (connor.young3@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 3
+ * of the License, or (at your option) any later version.
+ *
+ * Common Functions For All TestSim Components
+ *
+ **/
+
 #include "testsim.h"
 
 int initPort(udp_if_t *if_ptr, int port)
