@@ -20,7 +20,7 @@ int actModel(sup_to_act_t *in_ptr, act_to_dut_t *out_ptr)
 {
 	// Calculate Noise.
 	// Ideally This Would Be Gaussian, But Constant Will Do For A Simple Model
-	double current_noise = rand() % INPUT_NOISE;
+	double current_noise = (rand() % 1000) / (1000 * INPUT_NOISE);
 
 	// Calculate Actual Current Received
 	double current_actual = in_ptr->current_cmd + current_noise;

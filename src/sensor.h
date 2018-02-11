@@ -31,5 +31,8 @@ static struct timespec sample_time = { 0, SAMPLE_DT_MS * MS_TO_NS };
 // Poll Device Under Test To Simulate Sensor Sampling
 void *PollDUT(void *arg_ptr);
 
+// Sensor Model
+int sensorModel(dut_to_sens_t *in_ptr, sens_to_sup_t *out_ptr);
+
 #endif /* TESTSIM_SENSOR_H */
 

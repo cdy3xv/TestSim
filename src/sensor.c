@@ -47,7 +47,12 @@ int main(int argc, char **argv)
 			return 1;
 
 		/* Sensor Model (Noise, etc) Here */
+		if(sensorModel(&from_dut, &to_sup))
+			return 1;
+
+#ifdef DEBUG_COMMS
 		printf("Sensor Reading\n");
+#endif
 
 		// Send Sensor Reading To Supervisor
 		if(udpSend(&if_me, (void *)&to_sup, sizeof(to_sup), &addr_sup))

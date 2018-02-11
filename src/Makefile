@@ -13,7 +13,7 @@ APPS=supervisor sensor actuator dut
 _SUP_OBJ= supervisor.o testsim.o
 SUP_OBJ=$(patsubst %,$(ODIR)/%,$(_SUP_OBJ))
 
-_SENS_OBJ= sensor.o testsim.o
+_SENS_OBJ= sensor.o testsim.o sample_sensors.o sample_gauge.o sample_feedback.o
 SENS_OBJ=$(patsubst %,$(ODIR)/%,$(_SENS_OBJ))
 
 _ACT_OBJ= actuator.o testsim.o sampleHPU.o
