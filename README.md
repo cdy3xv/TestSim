@@ -1,2 +1,2 @@
 # TestSim
-UDP-based Modular Test Simulation
+UDP-based Modular Test Simulation. Simulates a test rig where an HPU is used to apply compressive force to a steel bar, and the resultant strain is measured by a full Wheatstone bridge. A PID loop controls the HPU to increment strain up and down on a timed loop. The simulation is designed in such a way that different components (e.g: The 1x1" steel bar under test) could be modified or replaced with minimal to no modification needed in the other components.
