@@ -19,5 +19,8 @@
 
 #include "testsim.h"
 
+/* Defined By Individual Models */
+int dutModel(act_to_dut_t *in_ptr, dut_to_sens_t *out_ptr);
+
 #endif /* TESTSIM_DUT_H */
 

@@ -31,7 +31,7 @@
 #define ACT_PORT	5431
 
 // Hash To Differentiate Poll From Actuation
-#define POLL_HASH	0xFFFF8000 // NaN As A Double Or A Float
+#define POLL_HASH	0xFFFFFFFFFFFFFFFFU // NaN As A Double Or A Float
 
 // UDP Interface Typedef
 typedef struct _udp_if_t {
@@ -41,23 +41,23 @@ typedef struct _udp_if_t {
 
 // Sensor To Supervisor Payload Typdef
 typedef struct _sens_to_sup_t {
-	double displacement_read;
-	double load_read;
+	double strain_read;		// Unitless
+	double force_read;		// kN
 } sens_to_sup_t;
 
 // Supervisor To Actuator Payload Typedef
 typedef struct _sup_to_act_t {
-	double force_cmd;
+	double voltage_cmd;		// V
 } sup_to_act_t;
 
 // Actuator To DUT Payload Typedef
 typedef struct _act_to_dut_t {
-	double force_actual;
+	double force_actual;		// kN
 } act_to_dut_t;
 
 // Sensor Sample Poll Payload Typedef
 typedef struct _poll_t {
-	int hash;
+	unsigned long long hash;
 } poll_t;
 
 // DUT Input Payload Typedef
@@ -68,8 +68,8 @@ typedef union _dut_input_t {
 
 // Dut To Sensor Payload Typedef
 typedef struct _dut_to_sens_t {
-	double displacement_actual;
-	double load_actual;
+	double strain_actual;		// Unitless
+	double force_actual;		// kN
 } dut_to_sens_t;
 
 // Initialize Socket And Bind It To port

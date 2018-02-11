@@ -19,7 +19,7 @@ SENS_OBJ=$(patsubst %,$(ODIR)/%,$(_SENS_OBJ))
 _ACT_OBJ= actuator.o testsim.o
 ACT_OBJ=$(patsubst %,$(ODIR)/%,$(_ACT_OBJ))
 
-_DUT_OBJ= dut.o testsim.o
+_DUT_OBJ= dut.o testsim.o steel_1x1_compress.o
 DUT_OBJ=$(patsubst %,$(ODIR)/%,$(_DUT_OBJ))
 
 $(ODIR)/%.o: %.c %.h testsim.h

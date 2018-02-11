@@ -45,6 +45,9 @@ int main(int argc, char **argv)
 		}
 		else {
 			/* Manipulate State Based On Actuation */
+			if(dutModel(&(input.act_to_dut), &to_sens))
+				return 1;
+
 			printf("Adjusted To Actuation\n");
 		}
 	}
