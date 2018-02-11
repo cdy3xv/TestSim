@@ -25,5 +25,9 @@ int dutModel(act_to_dut_t *in_ptr, dut_to_sens_t *out_ptr)
 	// Strain = F / (E * A). 1 kPa = 1 (kN / m^2)
 	out_ptr->strain_actual = in_ptr->force_actual / (YOUNGS_MOD * GPA_TO_KPA * AREA);
 
+#ifdef DEBUG_COMPRESS
+	printf("actual strain:%10f\n",out_ptr->strain_actual);
+#endif
+
 	return 0;
 }

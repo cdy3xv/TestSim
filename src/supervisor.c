@@ -38,7 +38,12 @@ int main(int argc, char **argv)
 			return 1;
 
 		/* Make Decisions Based On Sensor Data Here */
+		if(supModel(&from_sens, &to_act))
+			return 1;
+
+#ifdef DEBUG_COMMS
 		printf("Actuation Commanded\n");
+#endif
 
 		// Send Actuation Command
 		if(udpSend(&if_me, (void *)&to_act, sizeof(to_act), &addr_act))

@@ -19,5 +19,7 @@
 
 #include "testsim.h"
 
+int supModel(sens_to_sup_t *in_ptr, sup_to_act_t *out_ptr);
+
 #endif /* TESTSIM_SUPERVISOR_H */
 

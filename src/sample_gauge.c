@@ -25,10 +25,17 @@ int gaugeModel(dut_to_sens_t *in_ptr, sens_to_sup_t *out_ptr)
 	// Add Noise
 	Vo_V *= 1 + TEMP_NOISE;
 	Vo_V *= 1 + GF_TOLERANCE;
-	Vo_V += (rand() % 1000) / (1000 * TRANS_NOISE) - (TRANS_NOISE / 2);
+#ifdef DEBUG_GAUGE
+	printf("_V:%10f\t",Vo_V);
+#endif
+	Vo_V += (rand() % 1000) / (1000 / TRANS_NOISE) - (TRANS_NOISE / 2);
 
 	// Convert Back To Strain
 	out_ptr->strain_read = Vo_V / 1.3;
+
+#ifdef DEBUG_GAUGE
+	printf("V:%10f\tstrain read:%10f\n", Vo_V, out_ptr->strain_read);
+#endif
 
 	return 0;
 }

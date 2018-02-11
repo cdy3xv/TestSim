@@ -39,7 +39,10 @@ int main(int argc, char **argv)
 
 		// If Packet Was A Sensor Poll
 		if(input.poll.hash == POLL_HASH) {
+#ifdef DEBUG_COMMS
 			printf("Received Poll\n");
+#endif
+
 			if(udpSend(&if_me, (void *)&to_sens, sizeof(to_sens), &addr_sens))
 				return 1;
 		}

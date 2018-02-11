@@ -80,7 +80,10 @@ void *PollDUT(void *arg_ptr)
 	while(1) {
 		// Do Any Necessary Manipulations To Poll Payload
 		poll.hash = POLL_HASH;
+
+#ifdef DEBUG_COMMS
 		printf("Polling Sensor\n");
+#endif
 
 		// Send Poll To DUT
 		to_dut.poll = poll;
