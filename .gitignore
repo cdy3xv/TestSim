@@ -53,3 +53,9 @@ dkms.conf
 
 # vi files
 .*.swp
+
+# executables
+*/supervisor
+*/sensor
+*/dut
+*/actuator
