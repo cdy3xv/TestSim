@@ -20,12 +20,12 @@
 #include "supervisor.h"
 
 // PID Coefficients
-#define P		1
-#define I		0.01
+#define P		30000
+#define I		70000
 #define D		0
 
 // Test Routine Parameters
-#define TIME_STEP	2000	// Expressed In Units Of Sensor Samples
+#define TIME_STEP	200	// Expressed In Units Of Sensor Samples
 #define STRAIN_STEP	0.0001
 #define MAX_STRAIN	0.01
 #define MIN_STRAIN	0

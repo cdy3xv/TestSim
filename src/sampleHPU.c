@@ -57,5 +57,9 @@ int actModel(sup_to_act_t *in_ptr, act_to_dut_t *out_ptr)
 	// Translate to Force
 	out_ptr->force_actual = pressure * KPA_TO_KN;
 
+#ifdef DEBUG_HPU
+	printf("current:%10f\tpressure:%10f\tforce:%10f\n", current_actual, pressure, out_ptr->force_actual);
+#endif
+
 	return 0;
 }

@@ -29,6 +29,7 @@
 #define DEBUG_PID
 #define DEBUG_COMPRESS
 #define DEBUG_GAUGE
+#define DEBUG_HPU
 
 // Port Numbers For The Simulation Components
 #define SUP_PORT	5428

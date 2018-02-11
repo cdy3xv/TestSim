@@ -32,6 +32,8 @@ int gaugeModel(dut_to_sens_t *in_ptr, sens_to_sup_t *out_ptr)
 
 	// Convert Back To Strain
 	out_ptr->strain_read = Vo_V / 1.3;
+	if(out_ptr->strain_read < 0)
+		out_ptr->strain_read = 0;
 
 #ifdef DEBUG_GAUGE
 	printf("V:%10f\tstrain read:%10f\n", Vo_V, out_ptr->strain_read);

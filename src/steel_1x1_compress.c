@@ -26,7 +26,7 @@ int dutModel(act_to_dut_t *in_ptr, dut_to_sens_t *out_ptr)
 	out_ptr->strain_actual = in_ptr->force_actual / (YOUNGS_MOD * GPA_TO_KPA * AREA);
 
 #ifdef DEBUG_COMPRESS
-	printf("actual strain:%10f\n",out_ptr->strain_actual);
+	printf("actual strain:%10f\tconv:%10f\n", out_ptr->strain_actual, (YOUNGS_MOD * GPA_TO_KPA * AREA));
 #endif
 
 	return 0;
